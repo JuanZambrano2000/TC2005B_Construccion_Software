@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Actividad 1.3</title>
+<script type="text/javascript" src="main.js"></script>
+<link rel="stylesheet" href="style.css">
+<style>
+body {background-color: antiquewhite;}
+h1 {color:blue;}
+p {color: green;}
+* {
+    box-sizing: border-box;
+    }
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 100px;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+</head>
+<body>
+
+<div class="row">
+    <div class="column">
+        <h1 id="titulo1">Lista de consolas de playstation</h1>
+        <ol>
+            <li>Playstation 1</li>
+            <li>Playstation 2</li>
+            <li>Playstation 3</li>
+            <li>Playstation 4</li>
+            <li>Playstation 5</li>
+        </ol> 
+        <button onclick="changeColor('green')">haz click para cambiar el color del titulo</button>
+    </div>
+    <div class="column">
+        <h2 id="titulo2">Lista de Algunos animales</h2>
+        <ul>
+            <li>Perro</li>
+            <li>Gato</li>
+            <li>Vaca</li>
+            <li>Borrego</li>
+            <li>Chiva</li>
+        </ul> 
+        <button id="botoncito" onclick="changeSize('100px')">haz click para una sorpresa</button>
+    </div>
+  </div>
+</body>
+</html> 

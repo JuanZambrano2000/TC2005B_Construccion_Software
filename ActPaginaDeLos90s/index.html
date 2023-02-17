@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Mi pagina web!!!!!</title>
+<script type="text/javascript" src="main.js"></script>
+<link rel="stylesheet" href="style.css">
+<style>
+body {background-image: url('bebe.gif');}
+/*h1 {color:yellow; text-align: center; font-size: "100px";}*/
+p {color: green;}
+* {
+    box-sizing: border-box;
+    }
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 20px;
+  height: 450px;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+</head>
+<body>
+
+<div class="row">
+  <h1>Mi pagina web!!!!!</h1>
+</div>
+<div class="row">
+    <div class="column" style="background-color: green;">
+        <h1 id="titulo1">Lista de consolas de playstation</h1>
+        <ol>
+            <li>Playstation 1</li>
+            <li>Playstation 2</li>
+            <li>Playstation 3</li>
+            <li>Playstation 4</li>
+            <li>Playstation 5</li>
+        </ol> 
+        <button onclick="changeColor('green')">haz click para cambiar el color del titulo</button>
+    </div>
+    <div class="column" style="background-color: green;">
+        <h2 id="titulo2">Lista de Algunos animales</h2>
+        <ul>
+            <li>Perro</li>
+            <li>Gato</li>
+            <li>Vaca</li>
+            <li>Borrego</li>
+            <li>Chiva</li>
+        </ul> 
+        <button id="botoncito" onclick="changeSize('100px')">haz click para una sorpresa</button>
+    </div>
+  </div>
+</body>
+</html> 
