@@ -11,3 +11,7 @@ h2 {
     text-decoration: underline;
     color:brown;
 }
+
+body {
+    background-image: url('clouds.jpg');
+}
