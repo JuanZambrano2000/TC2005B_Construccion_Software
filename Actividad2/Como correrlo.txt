@@ -1,0 +1,1 @@
+para correrlo necesitas la aplicacion de Xampp y mover todos los archivos a C:\xampp\htdocs
