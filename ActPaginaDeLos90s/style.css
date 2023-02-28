@@ -10,8 +10,11 @@ h2 {
     font-family: 'Times New Roman', Times, serif;
     text-decoration: underline;
     color:brown;
+    text-align: left;
 }
 
 body {
     background-image: url('clouds.jpg');
 }
+
+

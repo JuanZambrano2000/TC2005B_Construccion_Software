@@ -3,27 +3,16 @@
 <head>
 <title>Mi pagina web!!!!!</title>
 <script type="text/javascript" src="main.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $("#boton-alerta").click(function() {
+      alert("Buuu, te asuste");
+    });
+  });
+</script>
 <link rel="stylesheet" href="style.css">
-<style>
-
-p {color: green;}
-* {
-    box-sizing: border-box;
-    }
-
-/* Create two equal columns that floats next to each other */
-.column {
-  float: left;
-  width: 50%;
-  padding: 20px;
-  height: 450px;
-}
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-</style>
+<link rel="stylesheet" href="main.css">
 </head>
 <body>
 
@@ -31,51 +20,77 @@ p {color: green;}
   <h1 align="center"><img src="dukeSpin.gif" width="60" height="60" border="0" align="top">
     Mi pagina web!!!!!<img src="dukeSpin.gif" width="60" height="60" border="0" align="top"></h1>
 </div>
-<div class="row">
-    <div class="column" style="background-color: rgb(140, 157, 65);">
-        <h2 id="titulo1">Juan pablo Zambrano barajas</h2>
-        <div class="column">
-          <img src="mifoto.jpg">
-        </div>
-        <div class="column">
-          <h3>Sobre mi:</h3>
-          <ol>
+
+  <div class="container text-center">
+    <div class="row" style="background-color: grey;">
+      <h2 id="titulo1">Juan pablo Zambrano barajas</h2>
+      <div class="col">
+        <div class="row">
+          <div class="col">
+            <img src="mifoto.jpg">
+          </div>
+          <div class="col">
+            <h3>Sobre mi:</h3>
+            <ol>
               <li>nombre: Juan Zambrano</li>
               <li>fecha nacimiento: 9 Octubre 1974</li>
               <li>lugar nacimiento: Guadalajara, Mexico</li>
               <li>video consola favorita: SNES</li>
               <li>ocupacion actual: estudiante</li>
               <li>comida favorita: tacos</li>
-              <li>juego de computadora favorito: Duke nukem</li>
+              <li>juego favorito: Duke nukem</li>
           </ol> 
           <button onclick="changeColor('red')">haz click para ver mis habilidades</button>
-        </div>    
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="row">
+          <div class="col">
+            <h3>Me gusta:</h3>
+            <ul>
+              <li>Computacion</li>
+              <li>Animales en general</li>
+              <li>Bicicleta</li>
+              <li>Videojuegos</li>
+              <li>Netscape</li>
+              <li>Tacos</li>
+            </ul> 
+          </div>
+          <div class="col">
+            <h3>No me gusta:</h3>
+            <img src="construction.gif" width="160" height="50">
+            <p></p>
+            <button id="botoncito" onclick="changeSize('100px')">haz click para una sorpresa</button>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="column" style="background-color: rgb(140, 157, 65);">
-        
-        <h3>Me gusta:</h3>
-        <ul>
-            <li>Computacion</li>
-            <li>Animales en general</li>
-            <li>Bicicleta</li>
-            <li>Videojuegos</li>
-            <li>Netscape</li>
-            <li>Tacos</li>
-        </ul> 
-        <h3>No me gusta:</h3>
-        <img src="construction.gif" width="160" height="50">
-        <p></p>
-        <button id="botoncito" onclick="changeSize('100px')">haz click para una sorpresa</button>
+  </div>
+  <p></p>
+  <p></p>
+
+  <div class="container text-center">
+    <div class="row" style="background-color: darkblue;">
+      <div class="col">
+        <div>
+          <img id="mi-imagen">
+          <button type="button" class="btn btn-danger" onclick="cargarImagen()">Haz click para un susto</button>
+        </div>
+      </div>
+      <div class="col">
+        <button id="boton-alerta">Haz click para otro susto</button>
+      </div>
     </div>
   </div>
   <p align="center"><a href="https://outlook.live.com/owa/"><img src="mailbird.gif" width="62" height="68" border="0" align="top">
-    Contactame en mi correo electronico<img src="3demail.gif" width="100" height="62" border="0" align="middle"></p>
+    Contactame en mi correo electronico<img src="3demail.gif" width="100" height="62" border="0" align="middle"></a></p>
   <p align="center"><font size="2" color="#ff0000">Copyright
         1996 por Juan Pablo Zambrano, hosting por Geocities, gracias por visitar mi pagina web</font></p>
   <p align="center"><img src="ie.gif" width="88" height="31" border="0"></p>
   <p align="center"><font size="2" color="#00ff00">Visitante numero:</font></p>
-  <p align="center"><a href="visitor.gif"><img src="contador.gif" width="150" height="60" border="0"></a></p>
-  <p align="center"><b>This page hosted by </b><b><img src="gc_icon.gif" width="200" height="88" border="0" align="middle"></b></a><b> Get your own </b><a href="google.com"><b>Free
+  <p align="center"><img src="contador.gif" width="150" height="60" border="0"></p>
+  <p align="center"><b>This page hosted by </b><b><img src="gc_icon.gif" width="200" height="88" border="0" align="middle"></b><b> Get your own </b><a href="google.com"><b>Free
     Homepage</b></a> </p>
 </body>
 </html> 
