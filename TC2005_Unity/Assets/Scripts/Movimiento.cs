@@ -18,7 +18,10 @@ public class Movimiento : MonoBehaviour
     private Transform _transform;
     // Modificar velocidad
     [SerializeField]
-    private float _speed;
+    private float _speed = 10;
+
+    [SerializeField]
+    private GameObject _disparoOriginal;
     
     //ciclo de vida / lifecycle
     // Existen metodos que se invocan en momentos especificos de la vida del script
@@ -40,6 +43,8 @@ public class Movimiento : MonoBehaviour
         // - Esta operacion puede regresar null
         _transform = GetComponent<Transform>();
         Assert.IsNotNull(_transform,"Es necesario para movimiento tener un transform");
+        Assert.IsNotNull(_disparoOriginal,"DISPARO NO PUEDE SER NULO");
+        //Assert.AreNotEqual(0,"Velocidad debe ser mayor a cero");
     }
     // Update is called once per frame
     // frame? cuadro?
@@ -80,14 +85,13 @@ public class Movimiento : MonoBehaviour
         //Mapeo de hardware a un valor abstracto llamado eje
         // hacemos polling a eje en lugar de hacerlo a hardware especifico
         //Raw
-        float horizontal = Input.GetAxisRaw("Horizontal");
+        //float horizontal = Input.GetAxisRaw("Horizontal");
         //Suavizado
         float vertical = Input.GetAxis("Vertical");
-        print(horizontal+" "+vertical);
+        float horizontal = Input.GetAxis("Horizontal");
+        //print(horizontal+" "+vertical);
         //Se pueden usar ejes como botones
-        if(Input.GetButtonDown("Jump")){
-            print("JUMP");
-        }
+        
         // Como mover objetos
         // 3 opciones
         // 1 - directamente con su transform
@@ -98,7 +102,22 @@ public class Movimiento : MonoBehaviour
         //1
         //Time.deltaTime en lugar de tomar los frames toma un tiempo fijo
         //Space.World nos permite que avance en la X del mundo, no el objeto (por si esta rotado)
-        _transform.Translate(_speed*0.1f*Time.deltaTime,0,0,Space.World);
+        _transform.Translate(
+            horizontal *_speed*Time.deltaTime,
+            vertical *_speed*Time.deltaTime,
+            0,
+            Space.World
+            );
+        if(Input.GetButtonDown("Jump")){
+            //print("JUMP");
+            //Se pueden hacer game objects vacios
+            //GameObject objeto = new GameObject();
+            //Si queremos un gameobject predefinido para clonar usamos instantiate
+            Instantiate(_disparoOriginal,
+            transform.position,
+            transform.rotation
+            );
+        }
 
     }
     //Fixed? - fijo
