@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
 
-public class Proyectil : MonoBehaviour
+public class EnemyBehaviour : MonoBehaviour
 {
     [SerializeField]
-    private float _speed=5;
+    private float _speed=-3;
     [SerializeField]
-    private float _tiempoDeAutodestruccion = 3;
+    private float _tiempoDeAutodestruccion = 5;
 
-    private GUIManager _gui;
+    //private GUIManager _gui;
 
     void Start(){
         //Si ceras objetos dinamicamante
@@ -18,21 +18,17 @@ public class Proyectil : MonoBehaviour
         // destroy - destruye game objects completos
         //o componentes
         Destroy(gameObject,_tiempoDeAutodestruccion);
-        //Nota esto va a cambiar
-        GameObject guiGO = GameObject.Find("GUIManager");
-        Assert.IsNotNull(guiGO, "No hay GUI manager");
-        _gui = guiGO.GetComponent<GUIManager>();
-        Assert.IsNotNull(_gui,"GUIManager no tiene componente");
     }
     // Update is called once per frame
     void Update()
     {
         transform.Translate(
             0,
-            0,
-            _speed*Time.deltaTime
+            _speed*Time.deltaTime,
+            0  
         );
     }
+
     //Colisionaes
     // Para checar colisiones con fisica necesitamos:
     // 1. todos los objetos involucrados requieren de un colider
@@ -57,6 +53,5 @@ public class Proyectil : MonoBehaviour
     }
     void OnTriggerExit(Collider c){
         print("Trigger exit");
-        _gui._texto.text = "SALI " + transform.name;
     } 
 }
