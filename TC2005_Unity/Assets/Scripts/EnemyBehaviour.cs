@@ -9,8 +9,8 @@ public class EnemyBehaviour : MonoBehaviour
     private float _speed=-3;
     [SerializeField]
     private float _tiempoDeAutodestruccion = 5;
-
     //private GUIManager _gui;
+    
 
     void Start(){
         //Si ceras objetos dinamicamante
@@ -36,6 +36,7 @@ public class EnemyBehaviour : MonoBehaviour
     // 3. el rigidbody debe estar en un objeto que se mueva
 
     //El objeto collision tiene info de la colision
+    /*
     void OnCollisionEnter(Collision c){
         print("Enter"+c.transform.name);
     }
@@ -53,5 +54,5 @@ public class EnemyBehaviour : MonoBehaviour
     }
     void OnTriggerExit(Collider c){
         print("Trigger exit");
-    } 
+    } */
 }
