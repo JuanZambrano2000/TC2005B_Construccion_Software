@@ -10,8 +10,6 @@ public class Proyectil : MonoBehaviour
     [SerializeField]
     private float _tiempoDeAutodestruccion = 3;
 
-    private GUIManager _gui;
-
     void Start(){
         //Si ceras objetos dinamicamante
         //Es indispensable que tenga al menos una estrategia de destruccion
@@ -19,10 +17,6 @@ public class Proyectil : MonoBehaviour
         //o componentes
         Destroy(gameObject,_tiempoDeAutodestruccion);
         //Nota esto va a cambiar
-        GameObject guiGO = GameObject.Find("GUIManager");
-        Assert.IsNotNull(guiGO, "No hay GUI manager");
-        _gui = guiGO.GetComponent<GUIManager>();
-        Assert.IsNotNull(_gui,"GUIManager no tiene componente");
     }
     // Update is called once per frame
     void Update()
@@ -51,12 +45,12 @@ public class Proyectil : MonoBehaviour
     }
     void OnTriggerEnter(Collider c){
         print("Trigger enter");
+        Destroy(gameObject);
     }
     void OnTriggerStay(Collider c){
         print("Trigger stay");
     }
     void OnTriggerExit(Collider c){
         print("Trigger exit");
-        _gui._texto.text = "SALI " + transform.name;
     } 
 }

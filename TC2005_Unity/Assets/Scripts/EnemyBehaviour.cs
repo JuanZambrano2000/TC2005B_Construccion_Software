@@ -9,8 +9,8 @@ public class EnemyBehaviour : MonoBehaviour
     private float _speed=-3;
     [SerializeField]
     private float _tiempoDeAutodestruccion = 5;
-    //private GUIManager _gui;
-    
+    [SerializeField]
+    private GameObject _self;
 
     void Start(){
         //Si ceras objetos dinamicamante
@@ -55,4 +55,7 @@ public class EnemyBehaviour : MonoBehaviour
     void OnTriggerExit(Collider c){
         print("Trigger exit");
     } */
+    void OnTriggerEnter(Collider c){
+        Destroy(_self);        
+    }
 }

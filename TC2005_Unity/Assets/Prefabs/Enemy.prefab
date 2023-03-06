@@ -112,3 +112,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: -3
   _tiempoDeAutodestruccion: 5
+  _self: {fileID: 4437018907863045666}
+  _bullet: {fileID: 1530718625980907896, guid: 77eee718cbbc92949acf77058ee8580b, type: 3}

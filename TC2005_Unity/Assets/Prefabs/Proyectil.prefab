@@ -113,6 +113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 4
   _tiempoDeAutodestruccion: 5
+  _self: {fileID: 1530718625980907896}
 --- !u!54 &8136532682529358236
 Rigidbody:
   m_ObjectHideFlags: 0
