@@ -10,6 +10,9 @@ public class Proyectil : MonoBehaviour
     [SerializeField]
     private float _tiempoDeAutodestruccion = 3;
 
+    private GUIManager _gui;
+    private int _score = 0;
+
     void Start(){
         //Si ceras objetos dinamicamante
         //Es indispensable que tenga al menos una estrategia de destruccion
@@ -17,6 +20,10 @@ public class Proyectil : MonoBehaviour
         //o componentes
         Destroy(gameObject,_tiempoDeAutodestruccion);
         //Nota esto va a cambiar
+
+        _gui = GUIManager.Instance;
+        Assert.IsNotNull(_gui,"GUI manager nulo");
+        _gui._texto.text = "Score: " + _score;
     }
     // Update is called once per frame
     void Update()
@@ -26,6 +33,7 @@ public class Proyectil : MonoBehaviour
             0,
             _speed*Time.deltaTime
         );
+        _gui._texto.text = "Score: " + _score;
     }
     //Colisionaes
     // Para checar colisiones con fisica necesitamos:
@@ -45,6 +53,7 @@ public class Proyectil : MonoBehaviour
     }
     void OnTriggerEnter(Collider c){
         print("Trigger enter");
+        _score=_score+1;
         Destroy(gameObject);
     }
     void OnTriggerStay(Collider c){

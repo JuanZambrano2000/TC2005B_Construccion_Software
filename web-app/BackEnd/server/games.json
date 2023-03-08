@@ -1,0 +1,16 @@
+{
+    "game1" : {
+       "title" : "Final Fantasy",
+       "type" : "JRPG",
+       "developer" : "Square Enix",
+       "size" : "35 GB",
+       "id": 1
+    },
+     "game2" : {
+        "title" : "Mario Bros",
+        "type" : "Puzzle",
+        "developer" : "nintendo",
+        "size" : "80 GB",
+        "id": 2
+    }
+}
