@@ -24,6 +24,7 @@ public class Proyectil : MonoBehaviour
         _gui = GUIManager.Instance;
         Assert.IsNotNull(_gui,"GUI manager nulo");
         _gui._texto.text = "Score: " + _score;
+        StartCoroutine(CorrutinaDummy());
     }
     // Update is called once per frame
     void Update()
@@ -43,23 +44,37 @@ public class Proyectil : MonoBehaviour
 
     //El objeto collision tiene info de la colision
     void OnCollisionEnter(Collision c){
-        print("Enter"+c.transform.name);
+        //print("Enter"+c.transform.name);
     }
     void OnCollisionStay(Collision c){
-        print("Stay");
+        //print("Stay");
     }
     void OnCollisionExit(Collision c){
-        print("Exit");  
+        //print("Exit");  
     }
     void OnTriggerEnter(Collider c){
-        print("Trigger enter");
+        //print("Trigger enter");
         _score=_score+1;
         Destroy(gameObject);
     }
     void OnTriggerStay(Collider c){
-        print("Trigger stay");
+        //print("Trigger stay");
     }
     void OnTriggerExit(Collider c){
-        print("Trigger exit");
+        //print("Trigger exit");
     } 
+    //CCORUTINAS
+    //Cuando tenemos la necesidad de hacer codigo "concurrente" vamos a utilizar corrutinas
+    //Se comportan como hilos (pero no son)
+
+    //CASO DE USO 1 - cuando queremos correr algo con un retraso
+    // tambien pueden usar invoke pero se recomienda corrutina
+    IEnumerator CorrutinaDummy(){
+        yield return new WaitForSeconds(2);
+        print("Hola");
+    }
+    //CASO DE USO 2 - logica recurrente
+    
+
+    //CASO DE USO 3 - (no mostrado) - al esperar respuesta de codigo asincrono
 }

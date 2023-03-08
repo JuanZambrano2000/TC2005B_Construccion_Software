@@ -16,6 +16,10 @@ public class Movimiento : MonoBehaviour
 
     //Atributo de clase _nombre
     private Transform _transform;
+    
+    private IEnumerator _ienumeratorCorrutina;
+
+    private Coroutine _corrutina;
     // Modificar velocidad
     [SerializeField]
     private float _speed = 10;
@@ -45,6 +49,9 @@ public class Movimiento : MonoBehaviour
         Assert.IsNotNull(_transform,"Es necesario para movimiento tener un transform");
         Assert.IsNotNull(_disparoOriginal,"DISPARO NO PUEDE SER NULO");
         //Assert.AreNotEqual(0,"Velocidad debe ser mayor a cero");
+        StartCoroutine(CorrutinaDummy());
+        //StartCoroutine(DisparoRecurrente());
+        _ienumeratorCorrutina = DisparoRecurrente();
     }
     // Update is called once per frame
     // frame? cuadro?
@@ -109,6 +116,7 @@ public class Movimiento : MonoBehaviour
             Space.World
             );
         if(Input.GetButtonDown("Jump")){
+            /*
             //print("JUMP");
             //Se pueden hacer game objects vacios
             //GameObject objeto = new GameObject();
@@ -116,7 +124,18 @@ public class Movimiento : MonoBehaviour
             Instantiate(_disparoOriginal,
             transform.position,
             transform.rotation
-            );
+            );*/
+            //Para detener una corrutina hay que tener referencia a ella en la construccion
+            // metodo 1 - EL FEO (Usando Strings)
+            //StartCoroutine("DisparoRecurrente");
+
+            // metodo 2 - con IEnumerator
+            StartCoroutine(_ienumeratorCorrutina);
+        }
+        if(Input.GetButtonUp("Jump")){
+            //StopAllCoroutines();
+            //StopCoroutine("DisparoRecurrente");
+            StopCoroutine(_ienumeratorCorrutina);
         }
 
     }
@@ -131,4 +150,21 @@ public class Movimiento : MonoBehaviour
     void LateUpdate(){
         //print("Late Update");  
     }
+
+    IEnumerator CorrutinaDummy(){
+        yield return new WaitForSeconds(2);
+        print("Hola");
+    }
+    //CASO DE USO 2 - logica recurrente
+    IEnumerator DisparoRecurrente(){
+        while(true){
+            Instantiate(_disparoOriginal,
+            transform.position,
+            transform.rotation);
+            yield return new WaitForSeconds(0.3f);
+            //print("CORRUTINA RECURRENTE");
+        }
+    }    
+
+    //CASO DE USO 3 - (no mostrado) - al esperar respuesta de codigo asincrono
 }
