@@ -130,12 +130,15 @@ public class Movimiento : MonoBehaviour
             //StartCoroutine("DisparoRecurrente");
 
             // metodo 2 - con IEnumerator
-            StartCoroutine(_ienumeratorCorrutina);
+            //StartCoroutine(_ienumeratorCorrutina);
+            // metodo 3 - referencia a corrutina
+            _corrutina = StartCoroutine(DisparoRecurrente());
         }
         if(Input.GetButtonUp("Jump")){
             //StopAllCoroutines();
             //StopCoroutine("DisparoRecurrente");
-            StopCoroutine(_ienumeratorCorrutina);
+            //StopCoroutine(_ienumeratorCorrutina);
+            StopCoroutine(_corrutina);
         }
 
     }
