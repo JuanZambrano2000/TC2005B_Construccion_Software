@@ -161,6 +161,9 @@ public class Movimiento : MonoBehaviour
     //CASO DE USO 2 - logica recurrente
     IEnumerator DisparoRecurrente(){
         while(true){
+            /*Instantiate(_disparoOriginal,
+            transform.position,
+            transform.rotation);*/
             Instantiate(_disparoOriginal,
             transform.position,
             transform.rotation);
