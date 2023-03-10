@@ -14,6 +14,7 @@ public class GUIManager : MonoBehaviour
     //Vamos a borrar nuevas instancias
     //static= atributo de clase, no objeto
     private static GUIManager _instance;
+    private int _score = 0;
     
 
     //PROPERTIES
@@ -63,12 +64,16 @@ public class GUIManager : MonoBehaviour
     void Start()
     {
         Assert.IsNotNull(_texto,"El texto no puede ser nulo");
-        _texto.text = "Hola desde el codigo";
+        _texto.text = "Score: " + _score;
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+    public void updateScore(){
+        _score=_score+1;
+        _texto.text = "Score: " + _score;
     }
 }

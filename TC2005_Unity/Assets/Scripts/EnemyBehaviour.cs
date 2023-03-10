@@ -12,12 +12,16 @@ public class EnemyBehaviour : MonoBehaviour
     [SerializeField]
     private GameObject _self;
 
+    private GUIManager _gui;
+
     void Start(){
         //Si ceras objetos dinamicamante
         //Es indispensable que tenga al menos una estrategia de destruccion
         // destroy - destruye game objects completos
         //o componentes
         Destroy(gameObject,_tiempoDeAutodestruccion);
+        _gui = GUIManager.Instance;
+        Assert.IsNotNull(_gui,"GUI manager nulo");
     }
     // Update is called once per frame
     void Update()
@@ -57,5 +61,6 @@ public class EnemyBehaviour : MonoBehaviour
     } */
     void OnTriggerEnter(Collider c){
         Destroy(_self);        
+        _gui.updateScore();
     }
 }
