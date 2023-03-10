@@ -111,4 +111,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 10
-  _disparoOriginal: {fileID: 1530718625980907896, guid: 77eee718cbbc92949acf77058ee8580b, type: 3}
+  _disparoOriginal: {fileID: 0}

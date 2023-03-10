@@ -843,6 +843,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemySpawner
       objectReference: {fileID: 0}
+    - target: {fileID: 8501998358674035459, guid: 9cfeb2602a5fc6f4bbe76e47ceeab483, type: 3}
+      propertyPath: m_Size.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8501998358674035459, guid: 9cfeb2602a5fc6f4bbe76e47ceeab483, type: 3}
+      propertyPath: m_Size.y
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8501998358674035459, guid: 9cfeb2602a5fc6f4bbe76e47ceeab483, type: 3}
+      propertyPath: m_Size.z
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 8501998358674035460, guid: 9cfeb2602a5fc6f4bbe76e47ceeab483, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -887,6 +899,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8501998358674035463, guid: 9cfeb2602a5fc6f4bbe76e47ceeab483, type: 3}
+      propertyPath: _enemy
+      value: 
+      objectReference: {fileID: 1311290861401530, guid: 312b31977ed9b2d48a14849ebb8c7fb3, type: 3}
     - target: {fileID: 8501998358674035463, guid: 9cfeb2602a5fc6f4bbe76e47ceeab483, type: 3}
       propertyPath: _rectangle
       value: 
