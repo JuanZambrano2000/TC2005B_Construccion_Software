@@ -32,9 +32,9 @@ public class ProyectilFisica : MonoBehaviour
         );
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    void OncollisionEnter(Collision c){
+        print("LAYER: " + c.gameObject.layer);
+        print("TAGS: " + c.transform.tag);
     }
+    
 }
