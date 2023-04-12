@@ -1,16 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
-
-import React from "react";
+import React from 'react';
 
 function App() {
   const [data, setData] = React.useState(null);
+
   React.useEffect(() => {
-    //res recibe lo que tiene el fetch
     fetch("/api/hello")
       .then((res) => res.json())
-      .then((data) => setData(data.message))
-  },[]);
+      .then((data) => setData(data.message));
+  }, []);
 
   return (
     <div className="App">
@@ -21,5 +20,6 @@ function App() {
     </div>
   );
 }
+
 
 export default App;
