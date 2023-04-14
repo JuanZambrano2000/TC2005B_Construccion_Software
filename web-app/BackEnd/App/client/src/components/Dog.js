@@ -4,9 +4,9 @@ function Dog(props){
     const data = props.data;
     return(
         <div>
-            <button>
+            <p>
                 {!data ? "Loading..." : data}
-            </button>
+            </p>
         </div> 
     );
 }

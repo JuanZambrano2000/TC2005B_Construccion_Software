@@ -14,7 +14,7 @@ function App() {
 
   return (
     <div className="App">
-      <Dog data={data?.catsName}/>
+      <Dog data={data?.dogsName}/>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>{!data?.message ? "Loading..." : data.message}</p>
