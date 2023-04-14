@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import React from 'react';
+import Dog from "./components/Dog";
 
 function App() {
   const [data, setData] = React.useState(null);
@@ -8,14 +9,15 @@ function App() {
   React.useEffect(() => {
     fetch("/api/hello")
       .then((res) => res.json())
-      .then((data) => setData(data.message));
+      .then((data) => setData(data));
   }, []);
 
   return (
     <div className="App">
+      <Dog data={data?.catsName}/>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>{!data ? "Loading..." : data}</p>
+        <p>{!data?.message ? "Loading..." : data.message}</p>
       </header>
     </div>
   );
